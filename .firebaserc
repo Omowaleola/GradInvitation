@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "gradinviteproject": {
+      "hosting": {
+        "app": [
+          "gradinviteproject"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "gradinviteproject"
+  }
+}

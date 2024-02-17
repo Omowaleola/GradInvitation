@@ -1,0 +1,26 @@
+<div class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col>Name</ion-col>
+      <ion-col>Ceremony</ion-col>
+      <ion-col>Reception</ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <div *ngFor="let guest of guests">
+      <ion-row >
+        <ion-col>{{guest.name}}</ion-col>
+        <ion-col>{{guest.isAttendingCeremony?"Yes":"No"}}</ion-col>
+        <ion-col>{{guest.isAttendingReception?"Yes":"No"}}</ion-col>
+        <ion-col>
+          <ion-button (click)="editGuest(guest)">
+            <ion-icon name="create-outline"></ion-icon>
+          </ion-button></ion-col>
+        <ion-col>
+          <ion-button (click)="deleteGuest(guest)">
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-button></ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</div>

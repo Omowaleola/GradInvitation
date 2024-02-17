@@ -1,0 +1,25 @@
+<ion-card class="card">
+  <ion-card-header></ion-card-header>
+  <ion-card-content>
+    <form #rsvpForm="ngForm" (ngSubmit)="saveRsvp()">
+      <ion-list>
+        <ion-item *ngIf="guestModel.guestType == GuestTypeEnum.fullGraduation">
+          <ion-checkbox
+            name="isAttendingCeremony"
+            [(ngModel)]="guestModel.isAttendingCeremony"
+            #isAttendingCeremony="ngModel"
+          >Attending Graduation</ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox
+            name="isAttendingReception"
+            [(ngModel)]="guestModel.isAttendingReception"
+            #isAttendingCeremony="ngModel"
+          >Attending Reception</ion-checkbox>
+        </ion-item>
+      </ion-list>
+      <ion-button fill="outline" type="submit">Save</ion-button>
+    </form>
+  </ion-card-content>
+</ion-card>
+

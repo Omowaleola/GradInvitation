@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button slot="end" (click)="logout()">Logout</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-tabs>
+    <ion-tab-bar slot="top" selected-tab="list">
+      <ion-tab-button tab="list">
+        <ion-icon name="list-circle-outline"></ion-icon>
+        Guest List
+      </ion-tab-button>
+      <ion-tab-button tab="add">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        Add Guest
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

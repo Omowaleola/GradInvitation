@@ -1,0 +1,32 @@
+<div class="ion-padding">
+  <form #addGuestForm="ngForm" (ngSubmit)="addEditGuest(addGuestForm)">
+    <ion-list>
+      <ion-item>
+        <ion-input name="name" label="Name" [(ngModel)]="guestDetail.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Phone Number" placeholder="000 000 0000"
+                   [maskito]="phoneMask"
+                   name="phoneNumber"
+                   minlength="12"
+                   [maskitoElement]="maskPredicate"
+                   [(ngModel)]="guestDetail.phoneNumber"
+                   #phoneNumber="ngModel"
+                   required="true"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select
+          name="guestType"
+          [(ngModel)]="guestDetail.guestType"
+          #guestType="ngModel">
+          <ion-select-option *ngFor="let type of guestTypes"
+                             value="{{type.id}}">
+            {{type.text}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit">{{buttonText}}</ion-button>
+  </form>
+</div>

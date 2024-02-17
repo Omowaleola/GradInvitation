@@ -1,0 +1,55 @@
+<div style="overflow-y: scroll;">
+  <p class="guestName">{{guestModel.name}}</p>
+  <p class="detailsText">You're invited to</p>
+  <p class="detailsText">Eki's Graduation</p>
+  <div class="gif">
+    <img  src="assets/images/partyCelebration.gif" alt="Time to Party">
+  </div>
+  <table>
+    <tr>
+      <th [colSpan]="2" class="date">03 May 2024</th>
+    </tr>
+    <tr *ngIf="guestModel.guestType == GuestTypeEnum.fullGraduation">
+      <th [colSpan]="2">Graduation Ceremony Details</th>
+    </tr>
+    <tr *ngIf="guestModel.guestType == GuestTypeEnum.fullGraduation">
+      <th>Time:</th>
+      <td>09:00 (We need to be seated 15 mins before the ceremony starts)</td>
+    </tr>
+    <tr *ngIf="guestModel.guestType == GuestTypeEnum.fullGraduation">
+      <th>Venue</th>
+      <td>UJ Auditorium - UJ APK Campus</td>
+    </tr>
+    <tr *ngIf="guestModel.guestType == GuestTypeEnum.fullGraduation">
+      <th>Dress Code:</th>
+      <td>Smart Formal</td>
+    </tr>
+    <tr *ngIf="guestModel.guestType == GuestTypeEnum.fullGraduation">
+      <th>Address:</th>
+      <td><a href="https://maps.google.com/?q={{Constants.ujAddress}}">
+        <a href="https://maps.apple.com/maps?q={{Constants.ujAddress}}">{{Constants.ujAddress}}</a></a></td>
+    </tr>
+    <tr *ngIf="guestModel.guestType == GuestTypeEnum.fullGraduation">
+      <td [colSpan]="2" style="text-align: center"><a
+        href="https://maps.google.com/?q={{Constants.ujGraduationParkingUrl}}">
+        <a href="https://maps.apple.com/maps?q={{Constants.ujGraduationParkingUrl}}">Parking</a></a></td>
+    </tr>
+    <tr *ngIf="guestModel.guestType == GuestTypeEnum.fullGraduation">
+      <th [colSpan]="2">Lunch Details</th>
+    </tr>
+    <tr>
+      <th>Time:</th>
+      <td>13:00</td>
+    </tr>
+    <tr>
+      <th>Venue:</th>
+      <td>Marble Rosebank</td>
+    </tr>
+    <tr>
+      <th>Address:</th>
+      <td [colSpan]="2"><a href="https://maps.google.com/?q={{Constants.marbleAddress}}">
+        <a href="https://maps.apple.com/maps?q={{Constants.marbleAddress}}">{{Constants.marbleAddress}}</a></a></td>
+    </tr>
+  </table>
+
+</div>

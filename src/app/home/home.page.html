@@ -1,0 +1,41 @@
+<ion-content class="background">
+  <div class="heading">
+    <h2>Ekemini Udom</h2>
+    <h2>is Graduating</h2>
+  </div>
+  <div class="gifCard">
+    <img  src="assets/images/madeIt.gif" alt="I made It">
+  </div>
+  <form (ngSubmit)="openInviteForm(inviteForm)" #inviteForm="ngForm">
+    <ion-card class="entryFormCard">
+      <ion-card-header class="ion-align-items-center">Access Invite</ion-card-header>
+
+      <ion-card-content class="ion-text-center">
+        <ion-input
+          label="Phone Number"
+          placeholder="000 000 0000"
+          [maskito]="phoneMask"
+          name="phoneNumber"
+          minlength="12"
+          [maskitoElement]="maskPredicate"
+          [(ngModel)]="selectedNumber"
+          #phoneNumber="ngModel"
+          required="true"
+
+        ></ion-input>
+        <ion-button
+          type="submit"
+          [disabled]="!inviteForm.form.valid"
+          fill="outline">RSVP</ion-button>
+      </ion-card-content>
+
+    </ion-card>
+  </form>
+  <ion-alert
+    [isOpen]="alertIsOpen"
+    header="Invite Response Already Exists"
+    message="Invalid User. No Invitation Found"
+    [buttons]="alertButtons"
+    (didDismiss)="setOpen(false)"
+  ></ion-alert>
+</ion-content>
