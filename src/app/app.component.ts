@@ -14,9 +14,12 @@ export class AppComponent implements OnInit{
   constructor(private uiService: UiService) {}
 
   ngOnInit() {
-    this.uiService.getIsLoading().subscribe((loading)=>{
-      this.isLoading = loading;
-    })
+    this.music.nativeElement.play().then(()=>{
+      this.uiService.getIsLoading().subscribe((loading)=>{
+        this.isLoading = loading;
+      });
+    });
+
   }
 
   playMusic()

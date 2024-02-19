@@ -5,10 +5,10 @@
   </audio>
   <ion-loading [isOpen]="isLoading" message="Loading..."  spinner="circles"></ion-loading>
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button *ngIf="isPlaying" (click)="stopMusic()">
+    <ion-fab-button *ngIf="!isPlaying" (click)="playMusic()">
       <ion-icon name="volume-high-outline"></ion-icon>
     </ion-fab-button>
-    <ion-fab-button *ngIf="!isPlaying" (click)="playMusic()">
+    <ion-fab-button *ngIf="isPlaying" (click)="stopMusic()">
       <ion-icon name="volume-mute-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
