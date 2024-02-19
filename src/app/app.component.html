@@ -1,4 +1,16 @@
 <ion-app>
+  <audio name="music" #music autoplay loop style="visibility: hidden">
+    <source src="assets/music/soundTrack.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
   <ion-loading [isOpen]="isLoading" message="Loading..."  spinner="circles"></ion-loading>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button *ngIf="isPlaying" (click)="stopMusic()">
+      <ion-icon name="volume-high-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button *ngIf="!isPlaying" (click)="playMusic()">
+      <ion-icon name="volume-mute-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>
